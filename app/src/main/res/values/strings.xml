@@ -1,6 +1,11 @@
 <resources>
-    <string name="app_name">LoginRegisterApp</string>
+    <string name="app_name">Can-Contento</string>
     <string name="Bienvenido">BIENVENIDO</string>
     <string name="correo">Ingresa tu correo</string>
     <string name="contra">Ingresa tu contraseña</string>
+    <string name="mis_mascotas">Mis mascotas</string>
+    <string name="title_home">Home</string>
+    <string name="title_servicios">Servicios</string>
+    <string name="title_perfil">Perfil</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
