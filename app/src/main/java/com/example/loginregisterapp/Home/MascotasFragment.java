@@ -68,10 +68,10 @@ public class MascotasFragment extends Fragment {
     }
 
     private void llenarLista() {
-        listaMascotas.add(new Mascota(R.drawable.jelaxd,"EL JELA XD", "EL PODEROSISIMO JELA"));
-        listaMascotas.add(new Mascota(R.drawable.jelaxd,"EL JELA XD", "EL PODEROSISIMO JELA"));
-        listaMascotas.add(new Mascota(R.drawable.jelaxd,"EL JELA XD", "EL PODEROSISIMO JELA"));
-        listaMascotas.add(new Mascota(R.drawable.jelaxd,"EL JELA XD", "EL PODEROSISIMO JELA"));
+        listaMascotas.add(new Mascota(R.drawable.elboxer ,"EL BOXER XD", "UN BOXER TODOS CORRAN QUE NOS VA A COMER AAHHHHHHHHHHHHH"));
+        listaMascotas.add(new Mascota(R.drawable.jelaxd,"EL JELA XD", "EL PODEROSISIMO JELaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaA"));
+        listaMascotas.add(new Mascota(R.drawable.jelaxd,"EL JELA XD", "EL PODEROSISIMO JELAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"));
+        listaMascotas.add(new Mascota(R.drawable.jelaxd,"EL JELA XD", "EL PODEROSISIMO JELAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"));
     }
 
 

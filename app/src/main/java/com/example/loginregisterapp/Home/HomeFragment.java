@@ -74,8 +74,9 @@ public class HomeFragment extends Fragment {
     private void setUpViewPager(ViewPager viewPager) {
         SectionPagerAdapter adapter = new SectionPagerAdapter(getChildFragmentManager());
 
-        adapter.addFragment(new MascotasFragment(), "Mascotas");
+
         adapter.addFragment(new CitasFragment(), "Citas");
+        adapter.addFragment(new MascotasFragment(), "Mascotas");
 
         viewPager.setAdapter(adapter);
     }
