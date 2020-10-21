@@ -2,6 +2,8 @@ package com.example.loginregisterapp.Home;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -37,7 +39,16 @@ public class MascotasFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        myFragment = inflater.inflate(R.layout.fragment_citas, container, false);
+        myFragment = inflater.inflate(R.layout.fragment_mascotas, container, false);
+
+
+        return myFragment;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
         FloatingActionButton fab = myFragment.findViewById(R.id.add);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,14 +58,13 @@ public class MascotasFragment extends Fragment {
         });
 
         listaMascotas = new ArrayList<>();
-        recyclerViewMascotas =  myFragment.findViewById(R.id.RecyclerMascotas);
-        recyclerViewMascotas.setLayoutManager(new LinearLayoutManager((getContext())));
+        recyclerViewMascotas =  myFragment.findViewById(R.id.recycler_mascotas);
+        recyclerViewMascotas.setLayoutManager(new LinearLayoutManager(getContext()));
 
         llenarLista();
         MascotaAdapter mascotaAdapter = new MascotaAdapter(listaMascotas);
         recyclerViewMascotas.setAdapter(mascotaAdapter);
 
-        return myFragment;
     }
 
     private void llenarLista() {
@@ -63,4 +73,6 @@ public class MascotasFragment extends Fragment {
         listaMascotas.add(new Mascota(R.drawable.jelaxd,"EL JELA XD", "EL PODEROSISIMO JELA"));
         listaMascotas.add(new Mascota(R.drawable.jelaxd,"EL JELA XD", "EL PODEROSISIMO JELA"));
     }
+
+
 }
