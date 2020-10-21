@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.loginregisterapp.R;
-import com.example.loginregisterapp.SectionPagerAdapter;
+import com.example.loginregisterapp.adapters.SectionPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
 
 

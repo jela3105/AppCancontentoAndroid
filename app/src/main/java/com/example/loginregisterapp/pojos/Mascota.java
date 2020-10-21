@@ -1,30 +1,30 @@
 package com.example.loginregisterapp.pojos;
 
 public class Mascota {
-    private int fotoMascota;
-    private String nombreMascota;
+    private int foto;
+    private String nombre;
     private String descripcion;
 
-    public Mascota(int fotoMascota, String nombreMascota, String descripcion) {
-        this.fotoMascota = fotoMascota;
-        this.nombreMascota = nombreMascota;
+    public Mascota(int foto, String nombre, String descripcion) {
+        this.foto = foto;
+        this.nombre = nombre;
         this.descripcion = descripcion;
     }
 
-    public int getFotoMascota() {
-        return fotoMascota;
+    public int getFoto() {
+        return foto;
     }
 
-    public void setFotoMascota(int fotoMascota) {
-        this.fotoMascota = fotoMascota;
+    public void setFoto(int foto) {
+        this.foto = foto;
     }
 
-    public String getNombreMascota() {
-        return nombreMascota;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombreMascota(String nombreMascota) {
-        this.nombreMascota = nombreMascota;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getDescripcion() {

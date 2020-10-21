@@ -1,4 +1,4 @@
-package com.example.loginregisterapp;
+package com.example.loginregisterapp.adapters;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
