@@ -5,6 +5,15 @@
     android:layout_height="match_parent"
     tools:context=".Home.MascotasFragment">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RecyclerMascotas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"/>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add"
         android:layout_width="wrap_content"
