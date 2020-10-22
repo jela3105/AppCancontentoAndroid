@@ -21,26 +21,64 @@
                 android:id="@+id/fotoMascota"
                 android:layout_width="200dp"
                 android:layout_height="150dp"
+                android:adjustViewBounds="true"
                 />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginStart="3dp">
                 <TextView
                     android:id="@+id/nombreMascota"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="HOLAMUNDOXD"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="5dp"
                     android:gravity="center"
-                    android:textSize="25dp"/>
+                    android:textSize="25sp"/>
+
                 <TextView
                     android:id="@+id/descripcionMascota"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:layout_marginRight="5dp"
                     android:layout_marginLeft="5dp"
                     android:text="Este es mas chico y mas"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp">
+
+                   <androidx.appcompat.widget.AppCompatButton
+                       android:id="@+id/editar_button_mascota"
+                       android:layout_width="70dp"
+                       android:layout_height="wrap_content"
+                       android:layout_marginStart="5dp"
+                       android:textSize="12sp"
+                       android:text="Editar"
+                       android:textColor="#FFFFFF"
+                       android:background="@color/colorAccent"
+                       />
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/agendar_button_mascota"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:textSize="10sp"
+                        android:text="Agendar cita"
+                        android:textColor="#FFFFFF"
+                        android:background="@color/colorAccent"
+                        />
+
+
+                </LinearLayout>
+                
+
 
             </LinearLayout>
             
