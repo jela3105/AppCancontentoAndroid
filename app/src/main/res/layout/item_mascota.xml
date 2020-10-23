@@ -66,7 +66,7 @@
                        android:textSize="12sp"
                        android:text="Editar"
                        android:textColor="#FFFFFF"
-                       android:background="@color/colorAccent"
+                       android:background="@color/secondaryColor"
                        />
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/agendar_button_mascota"
@@ -76,7 +76,7 @@
                         android:textSize="10sp"
                         android:text="Agendar"
                         android:textColor="#FFFFFF"
-                        android:background="@color/colorAccent"
+                        android:background="@color/secondaryColor"
                         />
 
 
