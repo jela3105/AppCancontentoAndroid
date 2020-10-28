@@ -68,7 +68,9 @@ public class MascotasFragment extends Fragment {
     }
 
     private void llenarLista() {
-        listaMascotas.add(new Mascota(R.drawable.elotrochico ,"El perrito", "Citas finalizadas: 0"));
+        listaMascotas.add(new Mascota(R.drawable.primero,"El perrito", "Citas finalizadas: 0"));
+        listaMascotas.add(new Mascota(R.drawable.elotrochico,"El perrito", "Citas finalizadas: 0"));
+        listaMascotas.add(new Mascota(R.drawable.picho,"El perrito", "Citas finalizadas: 0"));
     }
 
 
