@@ -5,11 +5,17 @@
     android:layout_height="match_parent"
     tools:context=".Home.MascotasFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_mascotas"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/recargar_mascotas"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp"/>
+        >
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_mascotas"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"/>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add"

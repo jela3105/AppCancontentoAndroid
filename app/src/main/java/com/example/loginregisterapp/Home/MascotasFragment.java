@@ -7,6 +7,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,6 +26,7 @@ public class MascotasFragment extends Fragment {
     View myFragment;
     RecyclerView recyclerViewMascotas;
     ArrayList<Mascota> listaMascotas;
+    private SwipeRefreshLayout swipeRefreshLayout;
 
     public MascotasFragment() {
         // Required empty public constructor
@@ -40,15 +42,13 @@ public class MascotasFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         myFragment = inflater.inflate(R.layout.fragment_mascotas, container, false);
-
-
         return myFragment;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        //boton flotante
         FloatingActionButton fab = myFragment.findViewById(R.id.add);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,17 +56,31 @@ public class MascotasFragment extends Fragment {
                 Toast.makeText(getContext(), "hello mascotas", Toast.LENGTH_SHORT).show();
             }
         });
-
+        //lista de mascotas
         listaMascotas = new ArrayList<>();
         recyclerViewMascotas =  myFragment.findViewById(R.id.recycler_mascotas);
         recyclerViewMascotas.setLayoutManager(new LinearLayoutManager(getContext()));
-
         llenarLista();
         MascotaAdapter mascotaAdapter = new MascotaAdapter(listaMascotas);
         recyclerViewMascotas.setAdapter(mascotaAdapter);
 
+        //recargar mascotas
+        swipeRefreshLayout = (SwipeRefreshLayout) myFragment.findViewById(R.id.recargar_mascotas);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                // Esto se ejecuta cada vez que se realiza el gesto
+                vaciarLista();
+                llenarLista();
+                Toast.makeText(getContext(), "Se volvio a cargar", Toast.LENGTH_SHORT).show();
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
     }
 
+    private void vaciarLista(){
+        listaMascotas.clear();
+    }
     private void llenarLista() {
         listaMascotas.add(new Mascota(R.drawable.primero,"El perrito", "Citas finalizadas: 0"));
         listaMascotas.add(new Mascota(R.drawable.elotrochico,"El perrito", "Citas finalizadas: 0"));
