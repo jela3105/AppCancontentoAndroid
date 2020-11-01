@@ -3,18 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Home.MascotasFragment">
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/recargar_mascotas"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
+        android:layout_margin="10dp"
         >
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_mascotas"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"/>
+            android:layout_height="match_parent"/>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -25,6 +27,7 @@
         android:src="@drawable/ic_baseline_add_24"
         android:contentDescription="@string/add"
         android:layout_margin="30dp"
+        app:backgroundTint="@color/primaryColor"
         android:tint="@color/design_default_color_background"
         />
 
