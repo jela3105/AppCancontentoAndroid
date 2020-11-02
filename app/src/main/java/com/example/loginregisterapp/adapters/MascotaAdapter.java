@@ -1,5 +1,7 @@
 package com.example.loginregisterapp.adapters;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,26 +13,52 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.loginregisterapp.AgendarCitaActivity;
+import com.example.loginregisterapp.EditarMascotaActivity;
 import com.example.loginregisterapp.R;
 import com.example.loginregisterapp.pojos.Mascota;
 
 import java.util.ArrayList;
 
-public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaViewHolder> implements View.OnClickListener {
+public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaViewHolder> {
 
-    public class MascotaViewHolder extends RecyclerView.ViewHolder{
+    public class MascotaViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
+        Context context;
         TextView nombreMascota, descripcionMascota;
         ImageView fotoMascota;
         Button editarMascota, agendarCita;
 
         public MascotaViewHolder(@NonNull View itemView) {
             super(itemView);
+            context = itemView.getContext();
             nombreMascota = (TextView) itemView.findViewById(R.id.nombreMascota);
             descripcionMascota = (TextView) itemView.findViewById(R.id.descripcionMascota);
             fotoMascota = (ImageView) itemView.findViewById(R.id.fotoMascota);
             editarMascota = (Button) itemView.findViewById(R.id.editar_button_mascota);
             agendarCita = (Button) itemView.findViewById(R.id.agendar_button_mascota);
+        }
+
+        public void setOnClickListeners(){
+            editarMascota.setOnClickListener(this);
+            agendarCita.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            switch (view.getId()){
+                case R.id.agendar_button_mascota:
+                    //Toast.makeText(view.getContext(), "agendarcita", Toast.LENGTH_SHORT).show();
+                    Intent startAgendarCita = new Intent(context, AgendarCitaActivity.class);
+                    context.startActivity(startAgendarCita);
+                    break;
+                case  R.id.editar_button_mascota:
+                    //Toast.makeText(view.getContext(), "editar mascota", Toast.LENGTH_SHORT).show();
+                    Intent startEditarMascota = new Intent(context, EditarMascotaActivity.class);
+                    context.startActivity(startEditarMascota);
+                    break;
+
+            }
         }
     }
 
@@ -55,20 +83,9 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
         holder.fotoMascota.setImageResource(listaMascota.get(position).getFoto());
 
         //events
+        holder.setOnClickListeners();
     }
 
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()){
-            case R.id.agendar_button_mascota:
-                Toast.makeText(view.getContext(), "agendarcita", Toast.LENGTH_SHORT).show();
-                break;
-            case  R.id.editar_button_mascota:
-                Toast.makeText(view.getContext(), "editar mascota", Toast.LENGTH_SHORT).show();
-                break;
-
-        }
-    }
 
     @Override
     public int getItemCount() {
