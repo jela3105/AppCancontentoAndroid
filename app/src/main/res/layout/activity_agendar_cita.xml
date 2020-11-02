@@ -6,4 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".AgendarCitaActivity">
 
+    <TextView
+        android:id="@+id/titulo_agendar_cita"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="AGENDAR CITA"
+        android:textSize="35sp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

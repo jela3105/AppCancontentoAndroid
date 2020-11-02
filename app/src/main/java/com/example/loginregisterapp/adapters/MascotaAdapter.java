@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaViewHolder> {
 
-    public class MascotaViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public static class  MascotaViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         Context context;
         TextView nombreMascota, descripcionMascota;
@@ -50,6 +50,7 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
                 case R.id.agendar_button_mascota:
                     //Toast.makeText(view.getContext(), "agendarcita", Toast.LENGTH_SHORT).show();
                     Intent startAgendarCita = new Intent(context, AgendarCitaActivity.class);
+                    startAgendarCita.putExtra("nombreMascota",nombreMascota.getText());
                     context.startActivity(startAgendarCita);
                     break;
                 case  R.id.editar_button_mascota:
