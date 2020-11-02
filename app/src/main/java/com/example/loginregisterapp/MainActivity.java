@@ -40,5 +40,8 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navView, navController);
 
     }
+
+
+
 }
 //14:15

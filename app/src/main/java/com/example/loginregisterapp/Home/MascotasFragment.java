@@ -23,11 +23,11 @@ import java.util.ArrayList;
 
 public class MascotasFragment extends Fragment {
 
-    View myFragment;
-    RecyclerView recyclerViewMascotas;
-    ArrayList<Mascota> listaMascotas;
+    private View myFragment;
+    FloatingActionButton fab;
+    private RecyclerView recyclerViewMascotas;
+    private ArrayList<Mascota> listaMascotas;
     private SwipeRefreshLayout swipeRefreshLayout;
-
     public MascotasFragment() {
         // Required empty public constructor
     }
@@ -42,6 +42,9 @@ public class MascotasFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         myFragment = inflater.inflate(R.layout.fragment_mascotas, container, false);
+        fab = myFragment.findViewById(R.id.add);
+        recyclerViewMascotas =  myFragment.findViewById(R.id.recycler_mascotas);
+        swipeRefreshLayout = myFragment.findViewById(R.id.recargar_mascotas);
         return myFragment;
     }
 
@@ -49,7 +52,6 @@ public class MascotasFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         //boton flotante
-        FloatingActionButton fab = myFragment.findViewById(R.id.add);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,14 +60,12 @@ public class MascotasFragment extends Fragment {
         });
         //lista de mascotas
         listaMascotas = new ArrayList<>();
-        recyclerViewMascotas =  myFragment.findViewById(R.id.recycler_mascotas);
         recyclerViewMascotas.setLayoutManager(new LinearLayoutManager(getContext()));
         llenarLista();
         MascotaAdapter mascotaAdapter = new MascotaAdapter(listaMascotas);
         recyclerViewMascotas.setAdapter(mascotaAdapter);
 
         //recargar mascotas
-        swipeRefreshLayout = (SwipeRefreshLayout) myFragment.findViewById(R.id.recargar_mascotas);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -76,6 +76,8 @@ public class MascotasFragment extends Fragment {
                 swipeRefreshLayout.setRefreshing(false);
             }
         });
+
+
     }
 
     private void vaciarLista(){

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_mascota"
     android:orientation="vertical"
     android:layout_height="wrap_content"
     android:layout_width="match_parent">
@@ -11,13 +12,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         card_view:cardCornerRadius="5dp"
-        android:layout_marginBottom="10dp"
-        >
+        android:layout_marginBottom="10dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -27,7 +26,6 @@
                     android:layout_height="250dp"
                     android:src="@drawable/picho"
                     android:scaleType="centerCrop"/>
-
                 <TextView
                     android:id="@+id/nombreMascota"
                     android:layout_width="match_parent"
@@ -38,30 +36,25 @@
                     android:padding="5dp"
                     android:textColor="#FFFF"
                     android:textSize="35sp"/>
-
             </FrameLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="5dp">
-                
                 <TextView
                     android:id="@+id/descripcionMascota"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="Este es mas chico y mas"/>
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_margin="2dp">
-
-                    <TextView
+                    <Button
                         android:id="@+id/editar_button_mascota"
                         android:layout_width="80dp"
                         android:layout_height="50dp"
@@ -71,8 +64,7 @@
                         android:focusable="true"
                         android:background="?android:attr/selectableItemBackground"
                         android:text="EDITAR" />
-
-                    <TextView
+                    <Button
                         android:id="@+id/agendar_button_mascota"
                         android:layout_width="150dp"
                         android:layout_height="50dp"
@@ -87,9 +79,5 @@
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-
     </androidx.cardview.widget.CardView>
-
-
-
 </LinearLayout>
