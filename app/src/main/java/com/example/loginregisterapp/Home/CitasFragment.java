@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
@@ -14,6 +15,8 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.loginregisterapp.R;
+import com.example.loginregisterapp.adapters.CitaAdapter;
+import com.example.loginregisterapp.adapters.MascotaAdapter;
 import com.example.loginregisterapp.pojos.Cita;
 import com.example.loginregisterapp.pojos.Mascota;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -58,6 +61,13 @@ public class CitasFragment extends Fragment {
                 Toast.makeText(getContext(), "hello citas", Toast.LENGTH_SHORT).show();
             }
         });
+
+        //lista de mascotas
+        listaCitas = new ArrayList<>();
+        recyclerViewCitas.setLayoutManager(new LinearLayoutManager(getContext()));
+        llenarLista();
+        CitaAdapter citaAdapter = new CitaAdapter(listaCitas);
+        recyclerViewCitas.setAdapter(citaAdapter);
 
         //recargar mascotas
         swipeRefreshLayoutCitas.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
