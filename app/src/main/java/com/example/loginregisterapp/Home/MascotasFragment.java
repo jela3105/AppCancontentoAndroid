@@ -58,6 +58,7 @@ public class MascotasFragment extends Fragment {
                 Toast.makeText(getContext(), "hello mascotas", Toast.LENGTH_SHORT).show();
             }
         });
+
         //lista de mascotas
         listaMascotas = new ArrayList<>();
         recyclerViewMascotas.setLayoutManager(new LinearLayoutManager(getContext()));

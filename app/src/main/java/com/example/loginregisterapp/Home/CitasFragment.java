@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.loginregisterapp.R;
 import com.example.loginregisterapp.pojos.Cita;
+import com.example.loginregisterapp.pojos.Mascota;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -67,4 +68,13 @@ public class CitasFragment extends Fragment {
             }
         });
     }
+
+    private void vaciarLista(){
+        listaCitas.clear();
+    }
+    private void llenarLista() {
+        listaCitas.add(new Cita());
+        listaCitas.add(new Cita());
+    }
+
 }
