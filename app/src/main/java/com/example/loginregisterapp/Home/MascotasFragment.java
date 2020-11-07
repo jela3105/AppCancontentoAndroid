@@ -27,7 +27,7 @@ public class MascotasFragment extends Fragment {
     FloatingActionButton fab;
     private RecyclerView recyclerViewMascotas;
     private ArrayList<Mascota> listaMascotas;
-    private SwipeRefreshLayout swipeRefreshLayout;
+    private SwipeRefreshLayout swipeRefreshLayoutMascotas;
     public MascotasFragment() {
         // Required empty public constructor
     }
@@ -44,7 +44,7 @@ public class MascotasFragment extends Fragment {
         myFragment = inflater.inflate(R.layout.fragment_mascotas, container, false);
         fab = myFragment.findViewById(R.id.add);
         recyclerViewMascotas =  myFragment.findViewById(R.id.recycler_mascotas);
-        swipeRefreshLayout = myFragment.findViewById(R.id.recargar_mascotas);
+        swipeRefreshLayoutMascotas = myFragment.findViewById(R.id.recargar_mascotas);
         return myFragment;
     }
 
@@ -66,14 +66,14 @@ public class MascotasFragment extends Fragment {
         recyclerViewMascotas.setAdapter(mascotaAdapter);
 
         //recargar mascotas
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+        swipeRefreshLayoutMascotas.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
                 // Esto se ejecuta cada vez que se realiza el gesto
                 vaciarLista();
                 llenarLista();
                 Toast.makeText(getContext(), "Se volvio a cargar", Toast.LENGTH_SHORT).show();
-                swipeRefreshLayout.setRefreshing(false);
+                swipeRefreshLayoutMascotas.setRefreshing(false);
             }
         });
 
