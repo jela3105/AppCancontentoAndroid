@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
     <androidx.cardview.widget.CardView
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/card_view_citas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         card_view:cardCornerRadius="5dp"
@@ -14,7 +14,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <ImageView
-                android:id="@+id/fotoMascota"
+                android:id="@+id/foto_cita_mascota"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:src="@drawable/picho"
@@ -27,11 +27,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
-                        android:layout_width="150dp"
+                        android:id="@+id/nombre_cita_servicio"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="NOMBRE DEL SERVICIO"
                         android:textSize="20sp"/>
                     <TextView
+                        android:id="@+id/status_cita"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Confirmada"
@@ -41,10 +43,12 @@
                         />
                 </LinearLayout>
                 <TextView
+                    android:id="@+id/nombre_cita_mascota"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="nombre perrito" />
                 <TextView
+                    android:id="@+id/descripcion_cita"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="DESCRIPCION DE TODO CADA TIPO DE CITA SE SUPONE QUE ESTO ESTA MAS LARGO"/>
@@ -52,10 +56,8 @@
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
 </LinearLayout>
-<!--
-desing
-https://www.pinterest.com.mx/pin/799670477560825327/
-->
+
 
 
