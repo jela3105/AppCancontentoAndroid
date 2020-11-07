@@ -17,6 +17,7 @@
                 android:id="@+id/foto_cita_mascota"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
+                android:layout_marginRight="5dp"
                 android:src="@drawable/picho"
                 android:scaleType="centerCrop"/>
             <LinearLayout
@@ -30,22 +31,27 @@
                         android:id="@+id/nombre_cita_servicio"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="5dp"
                         android:text="NOMBRE DEL SERVICIO"
-                        android:textSize="20sp"/>
+                        android:textSize="18sp"/>
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="match_parent"
-                        android:src="@drawable/button_confirmada"/>
+                        android:src="@drawable/button_finalizada"/>
                 </LinearLayout>
                 <TextView
                     android:id="@+id/nombre_cita_mascota"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:textSize="14sp"
                     android:text="nombre perrito" />
                 <TextView
                     android:id="@+id/descripcion_cita"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:textSize="14sp"
                     android:text="DESCRIPCION DE TODO CADA TIPO DE CITA SE SUPONE QUE ESTO ESTA MAS LARGO"/>
 
             </LinearLayout>
