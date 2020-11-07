@@ -32,15 +32,10 @@
                         android:layout_height="wrap_content"
                         android:text="NOMBRE DEL SERVICIO"
                         android:textSize="20sp"/>
-                    <TextView
-                        android:id="@+id/status_cita"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Confirmada"
-                        android:background="#00c853"
-                        android:textColor="#FFFF"
-                        android:gravity="center"
-                        />
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/button_confirmada"/>
                 </LinearLayout>
                 <TextView
                     android:id="@+id/nombre_cita_mascota"
