@@ -18,6 +18,7 @@ import com.example.loginregisterapp.R;
 import com.example.loginregisterapp.adapters.CitaAdapter;
 import com.example.loginregisterapp.adapters.MascotaAdapter;
 import com.example.loginregisterapp.pojos.Cita;
+import com.example.loginregisterapp.pojos.DescripcionCita;
 import com.example.loginregisterapp.pojos.Mascota;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -29,7 +30,7 @@ public class CitasFragment extends Fragment {
     private FloatingActionButton fab;
     private SwipeRefreshLayout swipeRefreshLayoutCitas;
     private RecyclerView recyclerViewCitas;
-    private ArrayList<Cita> listaCitas;
+    private ArrayList<DescripcionCita> listaCitas;
 
     public CitasFragment() {
         // Required empty public constructor
@@ -83,8 +84,45 @@ public class CitasFragment extends Fragment {
         listaCitas.clear();
     }
     private void llenarLista() {
-        listaCitas.add(new Cita());
-        listaCitas.add(new Cita());
+
+        DescripcionCita primero = new DescripcionCita();
+        DescripcionCita segundo = new DescripcionCita();
+        DescripcionCita tercero = new DescripcionCita();
+        DescripcionCita cuarto = new DescripcionCita();
+
+        primero.setFoto(R.drawable.primero);
+        primero.setServicio("Corte de garras");
+        primero.setStatus(1);
+        primero.setMascota("El perrito");
+        primero.setDescripcion("Se realiza un corte de garras muy chido");
+
+
+        segundo.setFoto(R.drawable.elotrochico);
+        segundo.setServicio("Baño especial");
+        segundo.setStatus(2);
+        segundo.setMascota("El segundo");
+        segundo.setDescripcion("Se realiza un baño con shampoo");
+
+
+        tercero.setFoto(R.drawable.picho);
+        tercero.setServicio("Paseo");
+        tercero.setStatus(3);
+        tercero.setMascota("Picho");
+        tercero.setDescripcion("Se realiza un paseo c");
+
+
+        cuarto.setFoto(R.drawable.primero);
+        cuarto.setServicio("Corte de garras");
+        cuarto.setStatus(4);
+        cuarto.setMascota("El perrito");
+        cuarto.setDescripcion("Se realiza un corte de garras muy chido");
+
+
+        listaCitas.add(primero);
+        listaCitas.add(segundo);
+        listaCitas.add(tercero);
+        listaCitas.add(cuarto);
+
     }
 
 }

@@ -1,8 +1,6 @@
 package com.example.loginregisterapp.adapters;
 
 import android.content.Context;
-import android.content.Intent;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.loginregisterapp.R;
 import com.example.loginregisterapp.pojos.Cita;
+import com.example.loginregisterapp.pojos.DescripcionCita;
 
 import java.util.ArrayList;
 
@@ -48,9 +47,9 @@ public class CitaAdapter extends RecyclerView.Adapter<CitaAdapter.CitaViewHolder
         }
     }
 
-    ArrayList<Cita> listaCita;
+    ArrayList<DescripcionCita> listaCita;
 
-    public CitaAdapter(ArrayList<Cita> listaCita) {
+    public CitaAdapter(ArrayList<DescripcionCita> listaCita) {
         this.listaCita = listaCita;
     }
 
@@ -64,8 +63,25 @@ public class CitaAdapter extends RecyclerView.Adapter<CitaAdapter.CitaViewHolder
     @Override
     public void onBindViewHolder(@NonNull CitaAdapter.CitaViewHolder holder, int position) {
         //setting text to componets
+        holder.nombreServicio.setText(listaCita.get(position).getServicio());
+        holder.nombreMascota.setText(listaCita.get(position).getMascota());
+        holder.fotoMascota.setImageResource(listaCita.get(position).getFoto());
+        holder.descripcionCita.setText(listaCita.get(position).getDescripcion());
+        switch (listaCita.get(position).getStatus()) {
+            case 1:
+                holder.imagenStatus.setImageResource(R.drawable.button_espera);
+                break;
+            case 2:
+                holder.imagenStatus.setImageResource(R.drawable.button_confirmada);
+                break;
 
-
+            case 3:
+                holder.imagenStatus.setImageResource(R.drawable.button_cancelada);
+                break;
+            case 4:
+                holder.imagenStatus.setImageResource(R.drawable.button_finalizada);
+                break;
+        }
         //events
         holder.setOnClickListeners();
     }
