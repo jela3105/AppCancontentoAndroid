@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.view.LayoutInflater;
@@ -13,13 +14,18 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.loginregisterapp.R;
+import com.example.loginregisterapp.pojos.Cita;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.ArrayList;
 
 public class CitasFragment extends Fragment {
 
-    View myFragment;
-    FloatingActionButton fab;
-    SwipeRefreshLayout swipeRefreshLayoutCitas;
+    private View myFragment;
+    private FloatingActionButton fab;
+    private SwipeRefreshLayout swipeRefreshLayoutCitas;
+    private RecyclerView recyclerViewCitas;
+    private ArrayList<Cita> listaCitas;
 
     public CitasFragment() {
         // Required empty public constructor
@@ -36,6 +42,7 @@ public class CitasFragment extends Fragment {
                              Bundle savedInstanceState) {
         myFragment = inflater.inflate(R.layout.fragment_citas, container, false);
         swipeRefreshLayoutCitas = myFragment.findViewById(R.id.recargar_citas);
+        recyclerViewCitas =  myFragment.findViewById(R.id.recycler_citas);
         return myFragment;
     }
 
@@ -55,7 +62,7 @@ public class CitasFragment extends Fragment {
         swipeRefreshLayoutCitas.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                Toast.makeText(getContext(), "Se volvio a cargar", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Se volvio a cargar citas", Toast.LENGTH_SHORT).show();
                 swipeRefreshLayoutCitas.setRefreshing(false);
             }
         });

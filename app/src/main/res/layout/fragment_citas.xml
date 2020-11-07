@@ -14,7 +14,7 @@
         android:layout_margin="10dp"
         >
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_mascotas"
+            android:id="@+id/recycler_citas"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

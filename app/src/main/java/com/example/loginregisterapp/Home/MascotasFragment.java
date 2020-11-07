@@ -24,7 +24,7 @@ import java.util.ArrayList;
 public class MascotasFragment extends Fragment {
 
     private View myFragment;
-    FloatingActionButton fab;
+    private FloatingActionButton fab;
     private RecyclerView recyclerViewMascotas;
     private ArrayList<Mascota> listaMascotas;
     private SwipeRefreshLayout swipeRefreshLayoutMascotas;
