@@ -74,6 +74,8 @@ public class CitasFragment extends Fragment {
         swipeRefreshLayoutCitas.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
+                vaciarLista();
+                llenarLista();
                 Toast.makeText(getContext(), "Se volvio a cargar citas", Toast.LENGTH_SHORT).show();
                 swipeRefreshLayoutCitas.setRefreshing(false);
             }
@@ -108,7 +110,7 @@ public class CitasFragment extends Fragment {
         tercero.setServicio("Paseo");
         tercero.setStatus(3);
         tercero.setMascota("Picho");
-        tercero.setDescripcion("Se realiza un paseo c");
+        tercero.setDescripcion("Se realiza un paseo con mas perritos a domicilio");
 
 
         cuarto.setFoto(R.drawable.primero);
