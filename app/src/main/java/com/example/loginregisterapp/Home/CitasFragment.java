@@ -110,7 +110,7 @@ public class CitasFragment extends Fragment implements AdapterView.OnItemSelecte
         segundo.setServicio("Baño especial");
         segundo.setStatus(2);
         segundo.setMascota("El segundo");
-        segundo.setDescripcion("Se realiza un baño con shampoo");
+        segundo.setDescripcion("Se realiza un baño con shampoo de caballo");
 
         listaCitas.add(primero);
         listaCitas.add(segundo);
