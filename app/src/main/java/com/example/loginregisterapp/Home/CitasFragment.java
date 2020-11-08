@@ -12,6 +12,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -26,7 +27,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
-public class CitasFragment extends Fragment {
+public class CitasFragment extends Fragment implements AdapterView.OnItemSelectedListener {
 
     private View myFragment;
     private FloatingActionButton fab;
@@ -56,6 +57,7 @@ public class CitasFragment extends Fragment {
         String [] filtros = {"","En espera","Confirmada","Cancelada","Finalizada"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item, filtros);
         spinnerCitas.setAdapter(adapter);
+        spinnerCitas.setOnItemSelectedListener(this);
         return myFragment;
     }
 
@@ -91,6 +93,7 @@ public class CitasFragment extends Fragment {
     }
 
     private void vaciarLista(){
+        spinnerCitas.setSelection(0);
         listaCitas.clear();
     }
     private void llenarLista() {
@@ -135,4 +138,29 @@ public class CitasFragment extends Fragment {
 
     }
 
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        switch (i) {
+            case 0:
+                Toast.makeText(getContext(), "Spinner limpio", Toast.LENGTH_SHORT).show();
+                break;
+            case 1:
+                Toast.makeText(getContext(), "En espera", Toast.LENGTH_SHORT).show();
+                break;
+            case 2:
+                Toast.makeText(getContext(), "Confirmada", Toast.LENGTH_SHORT).show();
+                break;
+            case 3:
+                Toast.makeText(getContext(), "Cancelada", Toast.LENGTH_SHORT).show();
+                break;
+            case 4:
+                Toast.makeText(getContext(), "Finalizada", Toast.LENGTH_SHORT).show();
+                break;
+        }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
 }
