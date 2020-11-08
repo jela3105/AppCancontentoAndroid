@@ -12,6 +12,8 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.loginregisterapp.R;
@@ -31,6 +33,7 @@ public class CitasFragment extends Fragment {
     private SwipeRefreshLayout swipeRefreshLayoutCitas;
     private RecyclerView recyclerViewCitas;
     private ArrayList<DescripcionCita> listaCitas;
+    private Spinner spinnerCitas;
 
     public CitasFragment() {
         // Required empty public constructor
@@ -48,6 +51,11 @@ public class CitasFragment extends Fragment {
         myFragment = inflater.inflate(R.layout.fragment_citas, container, false);
         swipeRefreshLayoutCitas = myFragment.findViewById(R.id.recargar_citas);
         recyclerViewCitas =  myFragment.findViewById(R.id.recycler_citas);
+        spinnerCitas = myFragment.findViewById(R.id.filtar_cita);
+
+        String [] filtros = {"","En espera","Confirmada","Cancelada","Finalizada"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item, filtros);
+        spinnerCitas.setAdapter(adapter);
         return myFragment;
     }
 
