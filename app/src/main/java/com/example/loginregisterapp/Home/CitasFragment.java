@@ -86,6 +86,7 @@ public class CitasFragment extends Fragment implements AdapterView.OnItemSelecte
             public void onRefresh() {
                 vaciarLista();
                 llenarLista();
+                spinnerCitas.setSelection(0);
                 Toast.makeText(getContext(), "Se volvio a cargar citas", Toast.LENGTH_SHORT).show();
                 swipeRefreshLayoutCitas.setRefreshing(false);
             }
@@ -93,15 +94,11 @@ public class CitasFragment extends Fragment implements AdapterView.OnItemSelecte
     }
 
     private void vaciarLista(){
-        spinnerCitas.setSelection(0);
         listaCitas.clear();
     }
     private void llenarLista() {
-
         DescripcionCita primero = new DescripcionCita();
         DescripcionCita segundo = new DescripcionCita();
-        DescripcionCita tercero = new DescripcionCita();
-        DescripcionCita cuarto = new DescripcionCita();
 
         primero.setFoto(R.drawable.primero);
         primero.setServicio("Corte de garras");
@@ -109,33 +106,14 @@ public class CitasFragment extends Fragment implements AdapterView.OnItemSelecte
         primero.setMascota("El perrito");
         primero.setDescripcion("Se realiza un corte de garras muy chido");
 
-
         segundo.setFoto(R.drawable.elotrochico);
         segundo.setServicio("Baño especial");
         segundo.setStatus(2);
         segundo.setMascota("El segundo");
         segundo.setDescripcion("Se realiza un baño con shampoo");
 
-
-        tercero.setFoto(R.drawable.picho);
-        tercero.setServicio("Paseo");
-        tercero.setStatus(3);
-        tercero.setMascota("Picho");
-        tercero.setDescripcion("Se realiza un paseo con mas perritos a domicilio");
-
-
-        cuarto.setFoto(R.drawable.primero);
-        cuarto.setServicio("Corte de garras");
-        cuarto.setStatus(4);
-        cuarto.setMascota("El perrito");
-        cuarto.setDescripcion("Se realiza un corte de garras muy chido");
-
-
         listaCitas.add(primero);
         listaCitas.add(segundo);
-        listaCitas.add(tercero);
-        listaCitas.add(cuarto);
-
     }
 
     @Override
