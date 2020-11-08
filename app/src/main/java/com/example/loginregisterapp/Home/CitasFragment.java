@@ -54,7 +54,7 @@ public class CitasFragment extends Fragment implements AdapterView.OnItemSelecte
         recyclerViewCitas =  myFragment.findViewById(R.id.recycler_citas);
         spinnerCitas = myFragment.findViewById(R.id.filtar_cita);
 
-        String [] filtros = {"","En espera","Confirmada","Cancelada","Finalizada"};
+        String [] filtros = {"Ninguno","En espera","Confirmada","Cancelada","Finalizada"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item, filtros);
         spinnerCitas.setAdapter(adapter);
         spinnerCitas.setOnItemSelectedListener(this);
@@ -85,7 +85,7 @@ public class CitasFragment extends Fragment implements AdapterView.OnItemSelecte
             @Override
             public void onRefresh() {
                 vaciarLista();
-                llenarLista();
+                llenarLista();//hacer peticion
                 spinnerCitas.setSelection(0);
                 Toast.makeText(getContext(), "Se volvio a cargar citas", Toast.LENGTH_SHORT).show();
                 swipeRefreshLayoutCitas.setRefreshing(false);
@@ -120,9 +120,11 @@ public class CitasFragment extends Fragment implements AdapterView.OnItemSelecte
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         switch (i) {
             case 0:
+                //mostrar todo el array de la lista
                 Toast.makeText(getContext(), "Spinner limpio", Toast.LENGTH_SHORT).show();
                 break;
             case 1:
+                //mostrar solo los que estan en espera (sin hacer la peticion)
                 Toast.makeText(getContext(), "En espera", Toast.LENGTH_SHORT).show();
                 break;
             case 2:
