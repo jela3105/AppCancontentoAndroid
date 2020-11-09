@@ -21,13 +21,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <ImageView
-                    android:id="@+id/fotoMascota"
+                    android:id="@+id/foto_servicio"
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
                     android:src="@drawable/picho"
                     android:scaleType="centerCrop"/>
                 <TextView
-                    android:id="@+id/nombreMascota"
+                    android:id="@+id/nombre_servicio"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
@@ -44,7 +44,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="5dp">
                 <TextView
-                    android:id="@+id/descripcionMascota"
+                    android:id="@+id/descripcion_servicio"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
@@ -54,26 +54,15 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_margin="2dp">
+
                     <Button
-                        android:id="@+id/editar_button_mascota"
-                        android:layout_width="80dp"
-                        android:layout_height="50dp"
-                        android:textSize="20sp"
-                        android:gravity="center"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:background="?android:attr/selectableItemBackground"
-                        android:text="EDITAR" />
-                    <Button
-                        android:id="@+id/agendar_button_mascota"
+                        android:id="@+id/agendar_button_servicio"
                         android:layout_width="150dp"
                         android:layout_height="50dp"
                         android:layout_marginStart="10dp"
                         android:gravity="center"
                         android:textColor="@color/secondaryColor"
                         android:textSize="20sp"
-                        android:clickable="true"
-                        android:focusable="true"
                         android:background="?android:attr/selectableItemBackground"
                         android:text="AGENDAR CITA"/>
                 </LinearLayout>
