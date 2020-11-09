@@ -24,7 +24,7 @@
                 android:id="@+id/filtar_cita"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"/>
+                android:layout_marginStart="5dp"/>
         </LinearLayout>
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/recargar_citas"
