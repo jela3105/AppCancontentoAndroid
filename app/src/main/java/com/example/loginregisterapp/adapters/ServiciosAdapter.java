@@ -35,15 +35,21 @@ public class ServiciosAdapter  extends RecyclerView.Adapter<ServiciosAdapter.Ser
             fotoServicio = (ImageView) itemView.findViewById(R.id.foto_servicio);
             descripcionServico = (TextView) itemView.findViewById(R.id.descripcion_servicio);
             agendarCita = (Button) itemView.findViewById(R.id.agendar_button_servicio);
-
         }
 
         public void setOnClickListeners(){
+            buttonViewMore.setOnClickListener(this);
+            agendarCita.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View view) {
-
+            switch (view.getId()){
+                case R.id.button_view_more_servicio:
+                    break;
+                case R.id.agendar_button_servicio:
+                    break;
+            }
         }
 
 
@@ -64,6 +70,8 @@ public class ServiciosAdapter  extends RecyclerView.Adapter<ServiciosAdapter.Ser
     @Override
     public void onBindViewHolder(@NonNull ServiciosViewHolder holder, int position) {
         holder.nombreServicio.setText(listaServicios.get(position).getNombre());
+        holder.descripcionServico.setText(listaServicios.get(position).getDescripcion());
+        holder.fotoServicio.setImageResource(listaServicios.get(position).getFoto());
     }
 
     @Override
