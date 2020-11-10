@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/item_mascota"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:layout_height="wrap_content"
     android:layout_width="match_parent">
 
     <androidx.cardview.widget.CardView
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         card_view:cardCornerRadius="5dp"
@@ -39,33 +39,50 @@
             </FrameLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="5dp">
-                <TextView
-                    android:id="@+id/descripcion_servicio"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:text="Este es mas chico y mas"/>
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="5dp">
+                    <TextView
+                        android:id="@+id/descripcion_servicio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="Este es mas chico y mas"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_margin="2dp">
+
+                        <Button
+                            android:id="@+id/agendar_button_servicio"
+                            android:layout_width="150dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="10dp"
+                            android:gravity="center"
+                            android:textColor="@color/secondaryColor"
+                            android:textSize="20sp"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:text="AGENDAR CITA"/>
+                    </LinearLayout>
+                </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_margin="2dp">
-
-                    <Button
-                        android:id="@+id/agendar_button_servicio"
-                        android:layout_width="150dp"
-                        android:layout_height="50dp"
-                        android:layout_marginStart="10dp"
-                        android:gravity="center"
-                        android:textColor="@color/secondaryColor"
-                        android:textSize="20sp"
-                        android:background="?android:attr/selectableItemBackground"
-                        android:text="AGENDAR CITA"/>
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="end"
+                        android:src="@drawable/ic_baseline_edit_24"
+                        android:layout_margin="10dp"/>
                 </LinearLayout>
+
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
