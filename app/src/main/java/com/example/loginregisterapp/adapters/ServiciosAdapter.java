@@ -38,8 +38,7 @@ public class ServiciosAdapter  extends RecyclerView.Adapter<ServiciosAdapter.Ser
         }
 
         public void setOnClickListeners(){
-            buttonViewMore.setOnClickListener(this);
-            agendarCita.setOnClickListener(this);
+
         }
 
         @Override

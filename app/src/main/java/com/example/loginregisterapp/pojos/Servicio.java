@@ -5,6 +5,12 @@ public class Servicio {
     int foto;
     String descripcion;
 
+    public Servicio(String nombre, int foto, String descripcion) {
+        this.nombre = nombre;
+        this.foto = foto;
+        this.descripcion = descripcion;
+    }
+
     public int getFoto() {
         return foto;
     }
