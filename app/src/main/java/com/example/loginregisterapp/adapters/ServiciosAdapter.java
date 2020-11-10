@@ -4,6 +4,9 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,12 +22,20 @@ public class ServiciosAdapter  extends RecyclerView.Adapter<ServiciosAdapter.Ser
     public class ServiciosViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         Context context;
-        TextView nombreServicio;
+        TextView nombreServicio, descripcionServico;
+        ImageButton buttonViewMore;
+        ImageView fotoServicio;
+        Button agendarCita;
         public ServiciosViewHolder(@NonNull View itemView) {
             super(itemView);
             setOnClickListeners();
             context = itemView.getContext();
             nombreServicio = (TextView) itemView.findViewById(R.id.nombre_servicio);
+            buttonViewMore = (ImageButton) itemView.findViewById(R.id.button_view_more_servicio);
+            fotoServicio = (ImageView) itemView.findViewById(R.id.foto_servicio);
+            descripcionServico = (TextView) itemView.findViewById(R.id.descripcion_servicio);
+            agendarCita = (Button) itemView.findViewById(R.id.agendar_button_servicio);
+
         }
 
         public void setOnClickListeners(){
