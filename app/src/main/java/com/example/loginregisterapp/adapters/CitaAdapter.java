@@ -87,6 +87,8 @@ public class CitaAdapter extends RecyclerView.Adapter<CitaAdapter.CitaViewHolder
     }
 
 
+
+
     @Override
     public int getItemCount() {
         return listaCita.size();
