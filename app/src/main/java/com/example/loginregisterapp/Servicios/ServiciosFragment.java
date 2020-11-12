@@ -56,7 +56,7 @@ public class ServiciosFragment extends Fragment {
 
     private void llenarLista() {
         listaServicios.add(new Servicio("Estetica",R.drawable.estetica,"Se realiza un bano con corte de pelo y cepillado"));
-        listaServicios.add(new Servicio("Estetica",R.drawable.veterinario,"Se realiza una consulta general para saber el estado de salud de la mascota"));
+        listaServicios.add(new Servicio("Veterinario",R.drawable.veterinario,"Se realiza una consulta general para saber el estado de salud de la mascota"));
         listaServicios.add(new Servicio("Estetica",R.drawable.estetica,"Se realiza un bano con corte de pelo y cepillado"));
 
     }
