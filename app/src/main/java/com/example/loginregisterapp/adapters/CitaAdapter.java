@@ -2,9 +2,12 @@ package com.example.loginregisterapp.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -23,26 +26,45 @@ public class CitaAdapter extends RecyclerView.Adapter<CitaAdapter.CitaViewHolder
         Context context;
         TextView nombreServicio, nombreMascota, descripcionCita;
         ImageView fotoMascota, imagenStatus;
+        ImageButton opciones;
 
         public CitaViewHolder(@NonNull View itemView) {
             super(itemView);
             context = itemView.getContext();
             //encontramos por id en item_cita
-            nombreMascota = (TextView) itemView.findViewById(R.id.nombre_cita_mascota);
-            nombreServicio = (TextView) itemView.findViewById(R.id.nombre_cita_servicio);
-            descripcionCita = (TextView) itemView.findViewById(R.id.descripcion_cita);
-            fotoMascota = (ImageView) itemView.findViewById(R.id.foto_cita_mascota);
-            imagenStatus = (ImageView) itemView.findViewById(R.id.status_cita);
+            nombreMascota = itemView.findViewById(R.id.nombre_cita_mascota);
+            nombreServicio = itemView.findViewById(R.id.nombre_cita_servicio);
+            descripcionCita = itemView.findViewById(R.id.descripcion_cita);
+            fotoMascota = itemView.findViewById(R.id.foto_cita_mascota);
+            imagenStatus = itemView.findViewById(R.id.status_cita);
+            opciones = itemView.findViewById(R.id.button_more_cita);
         }
 
         public void setOnClickListeners() {
-            //botones en item_cita
+            opciones.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View view) {
             switch (view.getId()) {
-
+                case R.id.button_more_cita:
+                    PopupMenu popup = new PopupMenu(context, opciones);
+                    popup.inflate(R.menu.options_cita_menu);
+                    popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                        @Override
+                        public boolean onMenuItemClick(MenuItem item) {
+                            switch (item.getItemId()) {
+                                case R.id.ver_mas_cita:
+                                    break;
+                                case R.id.editar_menu_cita:
+                                    break;
+                            }
+                            return false;
+                        }
+                    });
+                    //displaying the popup
+                    popup.show();
+                    break;
             }
         }
     }
@@ -67,6 +89,7 @@ public class CitaAdapter extends RecyclerView.Adapter<CitaAdapter.CitaViewHolder
         holder.nombreMascota.setText(listaCita.get(position).getMascota());
         holder.fotoMascota.setImageResource(listaCita.get(position).getFoto());
         holder.descripcionCita.setText(listaCita.get(position).getDescripcion());
+
         switch (listaCita.get(position).getStatus()) {
             case 1:
                 holder.imagenStatus.setImageResource(R.drawable.button_espera);
@@ -74,7 +97,6 @@ public class CitaAdapter extends RecyclerView.Adapter<CitaAdapter.CitaViewHolder
             case 2:
                 holder.imagenStatus.setImageResource(R.drawable.button_confirmada);
                 break;
-
             case 3:
                 holder.imagenStatus.setImageResource(R.drawable.button_cancelada);
                 break;
@@ -84,6 +106,7 @@ public class CitaAdapter extends RecyclerView.Adapter<CitaAdapter.CitaViewHolder
         }
         //events
         holder.setOnClickListeners();
+
     }
 
 
