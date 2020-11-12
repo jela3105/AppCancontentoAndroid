@@ -28,6 +28,10 @@ public class CitaActivity extends AppCompatActivity {
                 case "Agendar":
 
                     break;
+
+                case "AgendarCitaMascota":
+
+                    break;
             }
         }
 

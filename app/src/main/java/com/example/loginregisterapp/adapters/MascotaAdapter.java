@@ -13,7 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.loginregisterapp.CitaActivity;
-import com.example.loginregisterapp.EditarMascotaActivity;
+import com.example.loginregisterapp.MascotaActivity;
 import com.example.loginregisterapp.R;
 import com.example.loginregisterapp.pojos.Mascota;
 
@@ -49,12 +49,13 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
                 case R.id.agendar_button_mascota:
                     //Toast.makeText(view.getContext(), "agendarcita", Toast.LENGTH_SHORT).show();
                     Intent startAgendarCita = new Intent(context, CitaActivity.class);
-                    startAgendarCita.putExtra("nombreMascota",nombreMascota.getText());
+                    startAgendarCita.putExtra("Accion","AgendarCitaMascota");
                     context.startActivity(startAgendarCita);
                     break;
                 case  R.id.editar_button_mascota:
                     //Toast.makeText(view.getContext(), "editar mascota", Toast.LENGTH_SHORT).show();
-                    Intent startEditarMascota = new Intent(context, EditarMascotaActivity.class);
+                    Intent startEditarMascota = new Intent(context, MascotaActivity.class);
+                    startEditarMascota.putExtra("Accion", "Editar");
                     context.startActivity(startEditarMascota);
                     break;
 

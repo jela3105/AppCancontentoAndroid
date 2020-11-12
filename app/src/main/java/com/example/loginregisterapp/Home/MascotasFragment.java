@@ -1,5 +1,6 @@
 package com.example.loginregisterapp.Home;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.loginregisterapp.MascotaActivity;
 import com.example.loginregisterapp.R;
 import com.example.loginregisterapp.adapters.MascotaAdapter;
 import com.example.loginregisterapp.pojos.Mascota;
@@ -55,7 +57,9 @@ public class MascotasFragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(), "hello mascotas", Toast.LENGTH_SHORT).show();
+                Intent startEditarMascota = new Intent(getContext(), MascotaActivity.class);
+                startEditarMascota.putExtra("Accion", "Editar");
+                getContext().startActivity(startEditarMascota);
             }
         });
 

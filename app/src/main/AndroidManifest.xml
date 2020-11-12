@@ -14,7 +14,7 @@
         android:screenOrientation="portrait">
         <activity android:name=".CitaActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".EditarMascotaActivity"
+        <activity android:name=".MascotaActivity"
             android:screenOrientation="portrait"/>
         <activity android:name=".LoginActivity"
             android:screenOrientation="portrait"/>
