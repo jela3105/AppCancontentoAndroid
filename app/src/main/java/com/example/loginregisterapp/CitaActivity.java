@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class AgendarCitaActivity extends AppCompatActivity {
+import java.util.Objects;
+
+public class CitaActivity extends AppCompatActivity {
 
     TextView titulo;
 
@@ -16,9 +18,17 @@ public class AgendarCitaActivity extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         if(extras != null){
-            String nombreMascota = extras.getString("nombreMascota");
-            titulo = (TextView) findViewById(R.id.titulo_agendar_cita);
-            titulo.setText("AGENDAR CITA PARA " + nombreMascota.toUpperCase());
+            switch (Objects.requireNonNull(extras.getString("Accion"))) {
+                case "Editar":
+
+                    break;
+                case "VerMas":
+
+                    break;
+                case "Agendar":
+
+                    break;
+            }
         }
 
     }

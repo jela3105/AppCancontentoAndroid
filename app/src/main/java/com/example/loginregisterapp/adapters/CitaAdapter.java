@@ -1,6 +1,7 @@
 package com.example.loginregisterapp.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.loginregisterapp.CitaActivity;
 import com.example.loginregisterapp.R;
 import com.example.loginregisterapp.pojos.Cita;
 import com.example.loginregisterapp.pojos.DescripcionCita;
@@ -55,8 +57,14 @@ public class CitaAdapter extends RecyclerView.Adapter<CitaAdapter.CitaViewHolder
                         public boolean onMenuItemClick(MenuItem item) {
                             switch (item.getItemId()) {
                                 case R.id.ver_mas_cita:
+                                    Intent startVerMasCita = new Intent(context, CitaActivity.class);
+                                    startVerMasCita.putExtra("Accion","VerMas");
+                                    context.startActivity(startVerMasCita);
                                     break;
                                 case R.id.editar_menu_cita:
+                                    Intent startEditarCita = new Intent(context, CitaActivity.class);
+                                    startEditarCita.putExtra("Accion","Editar");
+                                    context.startActivity(startEditarCita);
                                     break;
                             }
                             return false;

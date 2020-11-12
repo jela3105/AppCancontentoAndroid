@@ -8,12 +8,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.loginregisterapp.AgendarCitaActivity;
+import com.example.loginregisterapp.CitaActivity;
 import com.example.loginregisterapp.EditarMascotaActivity;
 import com.example.loginregisterapp.R;
 import com.example.loginregisterapp.pojos.Mascota;
@@ -49,7 +48,7 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
             switch (view.getId()){
                 case R.id.agendar_button_mascota:
                     //Toast.makeText(view.getContext(), "agendarcita", Toast.LENGTH_SHORT).show();
-                    Intent startAgendarCita = new Intent(context, AgendarCitaActivity.class);
+                    Intent startAgendarCita = new Intent(context, CitaActivity.class);
                     startAgendarCita.putExtra("nombreMascota",nombreMascota.getText());
                     context.startActivity(startAgendarCita);
                     break;

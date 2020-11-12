@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:screenOrientation="portrait">
-        <activity android:name=".AgendarCitaActivity"
+        <activity android:name=".CitaActivity"
             android:screenOrientation="portrait"/>
         <activity android:name=".EditarMascotaActivity"
             android:screenOrientation="portrait"/>

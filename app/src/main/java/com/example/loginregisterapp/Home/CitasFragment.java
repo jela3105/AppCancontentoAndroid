@@ -1,5 +1,6 @@
 package com.example.loginregisterapp.Home;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -17,15 +18,14 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.loginregisterapp.CitaActivity;
 import com.example.loginregisterapp.R;
 import com.example.loginregisterapp.adapters.CitaAdapter;
-import com.example.loginregisterapp.adapters.MascotaAdapter;
-import com.example.loginregisterapp.pojos.Cita;
 import com.example.loginregisterapp.pojos.DescripcionCita;
-import com.example.loginregisterapp.pojos.Mascota;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class CitasFragment extends Fragment implements AdapterView.OnItemSelectedListener {
 
@@ -69,7 +69,9 @@ public class CitasFragment extends Fragment implements AdapterView.OnItemSelecte
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(), "hello citas", Toast.LENGTH_SHORT).show();
+                Intent startAgendarCita = new Intent(getContext(), CitaActivity.class);
+                //startAgendarCita.putExtra("nombreMascota",nombreMascota.getText());
+                requireContext().startActivity(startAgendarCita);
             }
         });
 
