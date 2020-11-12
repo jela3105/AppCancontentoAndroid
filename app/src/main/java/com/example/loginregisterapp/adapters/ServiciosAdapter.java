@@ -1,6 +1,7 @@
 package com.example.loginregisterapp.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.loginregisterapp.CitaActivity;
 import com.example.loginregisterapp.R;
 import com.example.loginregisterapp.pojos.Servicio;
 
@@ -28,17 +30,19 @@ public class ServiciosAdapter  extends RecyclerView.Adapter<ServiciosAdapter.Ser
         Button agendarCita;
         public ServiciosViewHolder(@NonNull View itemView) {
             super(itemView);
-            setOnClickListeners();
+
             context = itemView.getContext();
             nombreServicio = (TextView) itemView.findViewById(R.id.nombre_servicio);
             buttonViewMore = (ImageButton) itemView.findViewById(R.id.button_view_more_servicio);
             fotoServicio = (ImageView) itemView.findViewById(R.id.foto_servicio);
             descripcionServico = (TextView) itemView.findViewById(R.id.descripcion_servicio);
             agendarCita = (Button) itemView.findViewById(R.id.agendar_button_servicio);
+
         }
 
         public void setOnClickListeners(){
-
+            agendarCita.setOnClickListener(this);
+            buttonViewMore.setOnClickListener(this);
         }
 
         @Override
@@ -47,6 +51,9 @@ public class ServiciosAdapter  extends RecyclerView.Adapter<ServiciosAdapter.Ser
                 case R.id.button_view_more_servicio:
                     break;
                 case R.id.agendar_button_servicio:
+                    Intent startAgendarCita = new Intent(context, CitaActivity.class);
+                    startAgendarCita.putExtra("Accion","AgendarCitaServicio");
+                    context.startActivity(startAgendarCita);
                     break;
             }
         }
@@ -71,6 +78,7 @@ public class ServiciosAdapter  extends RecyclerView.Adapter<ServiciosAdapter.Ser
         holder.nombreServicio.setText(listaServicios.get(position).getNombre());
         holder.descripcionServico.setText(listaServicios.get(position).getDescripcion());
         holder.fotoServicio.setImageResource(listaServicios.get(position).getFoto());
+        holder.setOnClickListeners();
     }
 
     @Override

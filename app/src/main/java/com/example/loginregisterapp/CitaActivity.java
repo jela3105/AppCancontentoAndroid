@@ -25,7 +25,7 @@ public class CitaActivity extends AppCompatActivity {
                 case "VerMas":
 
                     break;
-                case "Agendar":
+                case "AgendarCitaServicio":
 
                     break;
 
