@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -49,6 +50,8 @@ public class ServiciosAdapter  extends RecyclerView.Adapter<ServiciosAdapter.Ser
         public void onClick(View view) {
             switch (view.getId()){
                 case R.id.button_view_more_servicio:
+                    //call popup of to show servicio description
+                    Toast.makeText(context, "Aqui debe de salir un popup", Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.agendar_button_servicio:
                     Intent startAgendarCita = new Intent(context, CitaActivity.class);
