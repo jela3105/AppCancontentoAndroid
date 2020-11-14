@@ -2,8 +2,6 @@
 Android native aplication for the project CanContento
 
 ## The images below are just a teaser of what is done
-
----
 ### Home
 
 > <img src="https://user-images.githubusercontent.com/46289656/99141296-afc1a300-260f-11eb-986e-eeb7b242a859.jpg" alt="Can Contento app Home-Cita" width="300"/>
