@@ -1,10 +1,10 @@
 package com.example.loginregisterapp.pojos;
 
 public class DescripcionCita extends Cita{
-    int foto;
+    String foto;
     String descripcion;
 
-    public DescripcionCita(int foto, String descripcion) {
+    public DescripcionCita(String foto, String descripcion) {
         super();
         this.foto = foto;
         this.descripcion = descripcion;
@@ -14,11 +14,11 @@ public class DescripcionCita extends Cita{
 
     }
 
-    public int getFoto() {
+    public String getFoto() {
         return foto;
     }
 
-    public void setFoto(int foto) {
+    public void setFoto(String foto) {
         this.foto = foto;
     }
 

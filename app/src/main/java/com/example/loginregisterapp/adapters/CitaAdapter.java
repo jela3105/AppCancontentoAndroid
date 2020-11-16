@@ -18,6 +18,7 @@ import com.example.loginregisterapp.CitaActivity;
 import com.example.loginregisterapp.R;
 import com.example.loginregisterapp.pojos.Cita;
 import com.example.loginregisterapp.pojos.DescripcionCita;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -95,7 +96,8 @@ public class CitaAdapter extends RecyclerView.Adapter<CitaAdapter.CitaViewHolder
         //setting text to componets
         holder.nombreServicio.setText(listaCita.get(position).getServicio());
         holder.nombreMascota.setText(listaCita.get(position).getMascota());
-        holder.fotoMascota.setImageResource(listaCita.get(position).getFoto());
+        //holder.fotoMascota.setImageResource(listaCita.get(position).getFoto());
+        Picasso.with(holder.context).load(listaCita.get(position).getFoto()).into(holder.fotoMascota);
         holder.descripcionCita.setText(listaCita.get(position).getDescripcion());
 
         switch (listaCita.get(position).getStatus()) {

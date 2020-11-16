@@ -105,13 +105,13 @@ public class CitasFragment extends Fragment implements AdapterView.OnItemSelecte
         DescripcionCita primero = new DescripcionCita();
         DescripcionCita segundo = new DescripcionCita();
 
-        primero.setFoto(R.drawable.primero);
+        primero.setFoto("https://raw.githubusercontent.com/jela3105/CanContentoFrontend/main/images/index/estetica.jpg");
         primero.setServicio("Corte de garras");
         primero.setStatus(1);
         primero.setMascota("El perrito");
         primero.setDescripcion("Se realiza un corte de garras muy chido");
 
-        segundo.setFoto(R.drawable.elotrochico);
+        segundo.setFoto("https://raw.githubusercontent.com/jela3105/CanContentoFrontend/main/images/index/estetica.jpg");
         segundo.setServicio("Baño especial");
         segundo.setStatus(2);
         segundo.setMascota("El segundo");
