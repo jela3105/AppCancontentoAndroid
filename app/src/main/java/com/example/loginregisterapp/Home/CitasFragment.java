@@ -123,7 +123,7 @@ public class CitasFragment extends Fragment implements AdapterView.OnItemSelecte
         switch (i) {
             case 0:
                 //mostrar todo el array de la lista
-                Toast.makeText(getContext(), "Spinner limpio", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getContext(), "Spinner limpio", Toast.LENGTH_SHORT).show();
                 break;
             case 1:
                 //mostrar solo los que estan en espera (sin hacer la peticion)
