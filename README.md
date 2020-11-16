@@ -13,5 +13,5 @@ Android native aplication for the project CanContento
 
 ---
 ### Perfil
-> <img src="https://user-images.githubusercontent.com/46289656/99141335-08913b80-2610-11eb-8494-3012b5c67447.jpg" alt="Can Contento app Perfil" width="300"/>
+> <img src="https://user-images.githubusercontent.com/46289656/99213169-854c2300-2792-11eb-9afc-b6888a080f2b.jpg" alt="Can Contento app Perfil" width="300"/>
 
