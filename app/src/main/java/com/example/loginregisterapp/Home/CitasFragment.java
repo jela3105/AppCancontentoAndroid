@@ -58,6 +58,14 @@ public class CitasFragment extends Fragment implements AdapterView.OnItemSelecte
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item, filtros);
         spinnerCitas.setAdapter(adapter);
         spinnerCitas.setOnItemSelectedListener(this);
+
+        //lista de mascotas
+        listaCitas = new ArrayList<>();
+        recyclerViewCitas.setLayoutManager(new LinearLayoutManager(getContext()));
+        llenarLista();
+        CitaAdapter citaAdapter = new CitaAdapter(listaCitas);
+        recyclerViewCitas.setAdapter(citaAdapter);
+
         return myFragment;
     }
 
@@ -75,12 +83,7 @@ public class CitasFragment extends Fragment implements AdapterView.OnItemSelecte
             }
         });
 
-        //lista de mascotas
-        listaCitas = new ArrayList<>();
-        recyclerViewCitas.setLayoutManager(new LinearLayoutManager(getContext()));
-        llenarLista();
-        CitaAdapter citaAdapter = new CitaAdapter(listaCitas);
-        recyclerViewCitas.setAdapter(citaAdapter);
+
 
         //recargar mascotas
         swipeRefreshLayoutCitas.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
