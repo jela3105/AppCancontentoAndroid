@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.loginregisterapp.CitaActivity;
 import com.example.loginregisterapp.R;
 import com.example.loginregisterapp.pojos.Servicio;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -33,11 +34,11 @@ public class ServiciosAdapter  extends RecyclerView.Adapter<ServiciosAdapter.Ser
             super(itemView);
 
             context = itemView.getContext();
-            nombreServicio = (TextView) itemView.findViewById(R.id.nombre_servicio);
-            buttonViewMore = (ImageButton) itemView.findViewById(R.id.button_view_more_servicio);
-            fotoServicio = (ImageView) itemView.findViewById(R.id.foto_servicio);
-            descripcionServico = (TextView) itemView.findViewById(R.id.descripcion_servicio);
-            agendarCita = (Button) itemView.findViewById(R.id.agendar_button_servicio);
+            nombreServicio = itemView.findViewById(R.id.nombre_servicio);
+            buttonViewMore = itemView.findViewById(R.id.button_view_more_servicio);
+            fotoServicio = itemView.findViewById(R.id.foto_servicio);
+            descripcionServico = itemView.findViewById(R.id.descripcion_servicio);
+            agendarCita =  itemView.findViewById(R.id.agendar_button_servicio);
 
         }
 
@@ -80,7 +81,7 @@ public class ServiciosAdapter  extends RecyclerView.Adapter<ServiciosAdapter.Ser
     public void onBindViewHolder(@NonNull ServiciosViewHolder holder, int position) {
         holder.nombreServicio.setText(listaServicios.get(position).getNombre());
         holder.descripcionServico.setText(listaServicios.get(position).getDescripcion());
-        holder.fotoServicio.setImageResource(listaServicios.get(position).getFoto());
+        Picasso.with(holder.context).load(listaServicios.get(position).getFoto()).into(holder.fotoServicio);
         holder.setOnClickListeners();
     }
 

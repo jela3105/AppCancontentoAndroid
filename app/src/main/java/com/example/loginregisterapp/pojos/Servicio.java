@@ -2,20 +2,20 @@ package com.example.loginregisterapp.pojos;
 
 public class Servicio {
     private String nombre;
-    int foto;
+    String foto;
     String descripcion;
 
-    public Servicio(String nombre, int foto, String descripcion) {
+    public Servicio(String nombre, String foto, String descripcion) {
         this.nombre = nombre;
         this.foto = foto;
         this.descripcion = descripcion;
     }
 
-    public int getFoto() {
+    public String getFoto() {
         return foto;
     }
 
-    public void setFoto(int foto) {
+    public void setFoto(String foto) {
         this.foto = foto;
     }
 
