@@ -65,7 +65,7 @@ public class CitasFragment extends Fragment implements AdapterView.OnItemSelecte
         llenarLista();
         CitaAdapter citaAdapter = new CitaAdapter(listaCitas);
         recyclerViewCitas.setAdapter(citaAdapter);
-
+ 
         return myFragment;
     }
 

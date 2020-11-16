@@ -140,8 +140,17 @@
                         android:background="@color/primaryLightColor"
                         android:textColor="#FFF"
                         android:text="Actualizar perfil"/>
+                    <ImageView
+                        android:id="@+id/image_test"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/button_finalizada"/>
                 </LinearLayout>
+
+
             </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
         </LinearLayout>
 
 
