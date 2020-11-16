@@ -1,21 +1,21 @@
 package com.example.loginregisterapp.pojos;
 
 public class Mascota {
-    private int foto;
+    private String foto;
     private String nombre;
     private String descripcion;
 
-    public Mascota(int foto, String nombre, String descripcion) {
+    public Mascota(String foto, String nombre, String descripcion) {
         this.foto = foto;
         this.nombre = nombre;
         this.descripcion = descripcion;
     }
 
-    public int getFoto() {
+    public String getFoto() {
         return foto;
     }
 
-    public void setFoto(int foto) {
+    public void setFoto(String foto) {
         this.foto = foto;
     }
 

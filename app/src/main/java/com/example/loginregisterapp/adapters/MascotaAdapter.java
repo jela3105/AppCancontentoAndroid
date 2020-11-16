@@ -16,6 +16,7 @@ import com.example.loginregisterapp.CitaActivity;
 import com.example.loginregisterapp.MascotaActivity;
 import com.example.loginregisterapp.R;
 import com.example.loginregisterapp.pojos.Mascota;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -81,8 +82,8 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
         //setting text to componets
         holder.nombreMascota.setText(listaMascota.get(position).getNombre());
         holder.descripcionMascota.setText(listaMascota.get(position).getDescripcion());
-        holder.fotoMascota.setImageResource(listaMascota.get(position).getFoto());
-
+        //holder.fotoMascota.setImageResource(listaMascota.get(position).getFoto());
+        Picasso.with(holder.context).load(listaMascota.get(position).getFoto()).into(holder.fotoMascota);
         //events
         holder.setOnClickListeners();
     }
