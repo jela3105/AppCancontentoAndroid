@@ -2,6 +2,7 @@ package com.example.loginregisterapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -35,14 +36,24 @@ public class LoginActivity extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                switch (view.getId()){
-                    case R.id.Loginbtn:
-                        break;
-                    case R.id.register_login_btn:
-                        break;
+                if(username.getText().toString().equals("") || password.getText().toString().equals("")){
+                    Toast.makeText(LoginActivity.this, "Por favor complete todos los campos correctamente", Toast.LENGTH_SHORT).show();
+                }else{
+                    login(username.getText().toString(), password.getText().toString());
                 }
-
             }
         });
+
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent registrarse = new Intent(view.getContext() ,RegistroActivity.class);
+                startActivity(registrarse);
+            }
+        });
+    }
+
+    private void login(String username, String password) {
+
     }
 }
