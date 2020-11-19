@@ -35,7 +35,7 @@
                             android:layout_marginStart="25dp"
                             android:textColor="@color/secondaryDarkColor"
                             android:textSize="12sp"
-                            android:text="Usuario"/>
+                            android:text="Correo electrónico"/>
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -137,17 +137,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="15dp"
-                        android:background="@color/primaryLightColor"
+                        android:background="@color/primaryColor"
                         android:textColor="#FFF"
                         android:text="Actualizar perfil"/>
                 </LinearLayout>
-
-
             </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
         </LinearLayout>
-
-
-
-
 </FrameLayout>

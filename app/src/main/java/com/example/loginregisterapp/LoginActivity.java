@@ -9,15 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.JsonHttpResponseHandler;
-import com.loopj.android.http.RequestParams;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import cz.msebera.android.httpclient.Header;
-
 public class LoginActivity extends AppCompatActivity {
 
     EditText username, password;
