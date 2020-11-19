@@ -20,11 +20,7 @@ import cz.msebera.android.httpclient.Header;
 public class LoginActivity extends AppCompatActivity {
 
     EditText username, password;
-    String u,p;
-    Button submit;
-    RequestParams params;
-    AsyncHttpClient client;
-    public static final String MYURL = "http://192.168.1.68:8084/Preciso/Cliente";
+    Button submit, register;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,50 +30,18 @@ public class LoginActivity extends AppCompatActivity {
         username = (EditText)findViewById(R.id.username_login);
         password = (EditText)findViewById(R.id.password_login);
         submit = (Button)findViewById(R.id.Loginbtn);
+        register = (Button)findViewById(R.id.register_login_btn);
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                u = username.getText().toString();
-                p = password.getText().toString();
+                switch (view.getId()){
+                    case R.id.Loginbtn:
+                        break;
+                    case R.id.register_login_btn:
+                        break;
+                }
 
-                params = new RequestParams();
-                params.put("correo",u);
-                params.put("contra",p);
-                params.put("action","login");
-                params.put("place","app");
-
-                client = new AsyncHttpClient();
-                client.post(MYURL, params, new JsonHttpResponseHandler(){
-                    @Override
-                    public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                        super.onSuccess(statusCode, headers, response);
-                        try {
-                            String respuesta = (String)response.get("Login");
-                            if(respuesta.equals("camposVacios")){
-                                Toast.makeText(LoginActivity.this,"Por favor, llena todos los campos",Toast.LENGTH_SHORT).show();
-                            }else if(respuesta.equals("Cliente")){
-                                Toast.makeText(LoginActivity.this,"Inicio sesion correcto",Toast.LENGTH_SHORT).show();
-                            }else if(respuesta.equals("usuarioNoEncontrado")){
-                            Toast.makeText(LoginActivity.this,"Usuario no encontrado",Toast.LENGTH_SHORT).show();
-                            }else if(respuesta.equals("contraseñaIncorrecta")){
-                            Toast.makeText(LoginActivity.this,"Contraseña incorrecta",Toast.LENGTH_SHORT).show();
-                            }
-                        }catch(Exception e){
-
-                        }
-                    }
-
-
-                    @Override
-                    public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
-                        super.onFailure(statusCode, headers, responseString, throwable);
-                        Toast.makeText(LoginActivity.this,"Something Went Wrong f "+ statusCode + responseString ,Toast.LENGTH_SHORT).show();
-                    }
-                    //Toast.makeText(MainActivity.this,"Something Went Wrong" ,Toast.LENGTH_SHORT).show();
-
-
-                });
             }
         });
     }
