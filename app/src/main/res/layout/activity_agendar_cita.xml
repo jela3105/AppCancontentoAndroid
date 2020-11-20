@@ -15,7 +15,9 @@
             android:id="@+id/titulo_agendar_cita"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:gravity="center"
             android:textStyle="bold"
             android:text="AGENDAR CITA"
@@ -23,17 +25,72 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/label_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="45dp"
+            android:text="Fecha"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titulo_agendar_cita" />
+
         <EditText
             android:id="@+id/cita_datepicker"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:inputType="date"
-            android:maxLines="1"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="2dp"
             android:clickable="true"
             android:focusable="false"
             android:hint="Fecha de la cita"
-            app:layout_constraintTop_toBottomOf="@+id/titulo_agendar_cita" />
+            android:inputType="date"
+            android:maxLines="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_date" />
+
+        <TextView
+            android:id="@+id/label_hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="45dp"
+            android:text="Hora:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cita_datepicker" />
+
+        <EditText
+            android:id="@+id/cita_hora_picker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="2dp"
+            android:clickable="true"
+            android:focusable="false"
+            android:hint="Hora de la cita"
+            android:inputType="date"
+            android:maxLines="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_hour" />
+
+        <TextView
+            android:id="@+id/label_servicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="45dp"
+            android:text="Tipo de servicio:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cita_hora_picker" />
+
+        <Spinner
+            android:id="@+id/cita_servicio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/label_servicio" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
