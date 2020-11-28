@@ -28,11 +28,11 @@ public class CitaActivity extends AppCompatActivity implements View.OnClickListe
 
         Bundle extras = getIntent().getExtras();
         if(extras != null){
-            switch (Objects.requireNonNull(extras.getString("Accion"))) {
-                case "Editar":
+            switch (Objects.requireNonNull(extras.getString("Action"))) {
+                case "Edit":
 
                     break;
-                case "VerMas":
+                case "SeeMore":
 
                     break;
                 case "AgendarCitaServicio":

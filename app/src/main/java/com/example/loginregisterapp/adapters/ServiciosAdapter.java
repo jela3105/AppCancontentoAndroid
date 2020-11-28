@@ -56,7 +56,7 @@ public class ServiciosAdapter  extends RecyclerView.Adapter<ServiciosAdapter.Ser
                     break;
                 case R.id.agendar_button_servicio:
                     Intent startAgendarCita = new Intent(context, CitaActivity.class);
-                    startAgendarCita.putExtra("Accion","AgendarCitaServicio");
+                    startAgendarCita.putExtra("Action","AgendarCitaServicio");
                     context.startActivity(startAgendarCita);
                     break;
             }

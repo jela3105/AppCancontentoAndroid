@@ -59,12 +59,12 @@ public class CitaAdapter extends RecyclerView.Adapter<CitaAdapter.CitaViewHolder
                             switch (item.getItemId()) {
                                 case R.id.ver_mas_cita:
                                     Intent startVerMasCita = new Intent(context, CitaActivity.class);
-                                    startVerMasCita.putExtra("Accion","VerMas");
+                                    startVerMasCita.putExtra("Action","SeeMore");
                                     context.startActivity(startVerMasCita);
                                     break;
                                 case R.id.editar_menu_cita:
                                     Intent startEditarCita = new Intent(context, CitaActivity.class);
-                                    startEditarCita.putExtra("Accion","Editar");
+                                    startEditarCita.putExtra("Action","Edit");
                                     context.startActivity(startEditarCita);
                                     break;
                             }

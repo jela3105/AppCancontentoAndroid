@@ -32,11 +32,11 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
         public MascotaViewHolder(@NonNull View itemView) {
             super(itemView);
             context = itemView.getContext();
-            nombreMascota = (TextView) itemView.findViewById(R.id.nombreMascota);
-            descripcionMascota = (TextView) itemView.findViewById(R.id.descripcionMascota);
-            fotoMascota = (ImageView) itemView.findViewById(R.id.fotoMascota);
-            editarMascota = (Button) itemView.findViewById(R.id.editar_button_mascota);
-            agendarCita = (Button) itemView.findViewById(R.id.agendar_button_mascota);
+            nombreMascota = itemView.findViewById(R.id.nombreMascota);
+            descripcionMascota = itemView.findViewById(R.id.descripcionMascota);
+            fotoMascota = itemView.findViewById(R.id.fotoMascota);
+            editarMascota = itemView.findViewById(R.id.editar_button_mascota);
+            agendarCita = itemView.findViewById(R.id.agendar_button_mascota);
         }
 
         public void setOnClickListeners(){
@@ -50,7 +50,7 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
                 case R.id.agendar_button_mascota:
                     //Toast.makeText(view.getContext(), "agendarcita", Toast.LENGTH_SHORT).show();
                     Intent startAgendarCita = new Intent(context, CitaActivity.class);
-                    startAgendarCita.putExtra("Accion","AgendarCitaMascota");
+                    startAgendarCita.putExtra("Action","AgendarCitaMascota");
                     context.startActivity(startAgendarCita);
                     break;
                 case  R.id.editar_button_mascota:
