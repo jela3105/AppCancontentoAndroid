@@ -30,6 +30,8 @@ public class MascotasFragment extends Fragment {
     private RecyclerView recyclerViewMascotas;
     private ArrayList<Mascota> listaMascotas;
     private SwipeRefreshLayout swipeRefreshLayoutMascotas;
+
+
     public MascotasFragment() {
         // Required empty public constructor
     }
@@ -37,7 +39,6 @@ public class MascotasFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -53,30 +54,26 @@ public class MascotasFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        //boton flotante
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent startEditarMascota = new Intent(getContext(), MascotaActivity.class);
-                startEditarMascota.putExtra("Accion", "Editar");
+                startEditarMascota.putExtra("Action", "Add");
                 getContext().startActivity(startEditarMascota);
             }
         });
 
-        //lista de mascotas
         listaMascotas = new ArrayList<>();
         recyclerViewMascotas.setLayoutManager(new LinearLayoutManager(getContext()));
-        llenarLista();
+        fillList();
         MascotaAdapter mascotaAdapter = new MascotaAdapter(listaMascotas);
         recyclerViewMascotas.setAdapter(mascotaAdapter);
 
-        //recargar mascotas
         swipeRefreshLayoutMascotas.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                // Esto se ejecuta cada vez que se realiza el gesto
-                vaciarLista();
-                llenarLista();
+                emptyList();
+                fillList();
                 Toast.makeText(getContext(), "Se volvio a cargar", Toast.LENGTH_SHORT).show();
                 swipeRefreshLayoutMascotas.setRefreshing(false);
             }
@@ -85,10 +82,11 @@ public class MascotasFragment extends Fragment {
 
     }
 
-    private void vaciarLista(){
+    private void emptyList(){
         listaMascotas.clear();
     }
-    private void llenarLista() {
+
+    private void fillList() {
         listaMascotas.add(new Mascota("https://raw.githubusercontent.com/jela3105/CanContentoFrontend/main/images/index/estetica.jpg","El perrito", "Citas finalizadas: 0"));
         listaMascotas.add(new Mascota("https://raw.githubusercontent.com/jela3105/CanContentoFrontend/main/images/index/estetica.jpg","El segundo", "Citas finalizadas: 0"));
     }

@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import java.util.Objects;
+
 public class MascotaActivity extends AppCompatActivity {
 
     @Override
@@ -13,10 +15,10 @@ public class MascotaActivity extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         if(extras!= null){
-            switch (extras.getString("Accion")){
-                case "Editar":
+            switch (Objects.requireNonNull(extras.getString("Action"))){
+                case "Edit":
                     break;
-                case "Agregar":
+                case "Add":
                     break;
             }
         }

@@ -56,7 +56,7 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
                 case  R.id.editar_button_mascota:
                     //Toast.makeText(view.getContext(), "editar mascota", Toast.LENGTH_SHORT).show();
                     Intent startEditarMascota = new Intent(context, MascotaActivity.class);
-                    startEditarMascota.putExtra("Accion", "Editar");
+                    startEditarMascota.putExtra("Action", "Edit");
                     context.startActivity(startEditarMascota);
                     break;
 
