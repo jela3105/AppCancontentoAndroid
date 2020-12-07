@@ -22,7 +22,7 @@ public class CitaActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_agendar_cita);
+        setContentView(R.layout.activity_cita);
         fechaCita = (EditText) findViewById(R.id.cita_datepicker);
         fechaCita.setOnClickListener(this);
 
