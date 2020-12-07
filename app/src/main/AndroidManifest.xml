@@ -14,7 +14,8 @@
         android:theme="@style/AppTheme">
         <activity android:name=".RegistroActivity"></activity>
         <activity
-            android:name=".CitaActivity"/>
+            android:name=".CitaActivity"
+            android:label="Cita"/>
         <activity
             android:name=".MascotaActivity"
             android:screenOrientation="portrait" />
