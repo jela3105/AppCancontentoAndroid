@@ -25,6 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:gravity="center"
+            android:textColor="@color/secondaryDarkColor"
             android:text="AGENDAR CITA"
             android:textSize="35sp"
             android:textStyle="bold"
@@ -36,6 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
+            android:textColor="@color/secondaryDarkColor"
             android:text="Fecha:"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/titulo_agendar_cita" />
@@ -59,6 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:layout_marginTop="45dp"
+            android:textColor="@color/secondaryDarkColor"
             android:text="Hora:"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cita_datepicker" />
@@ -78,10 +81,11 @@
 
         <TextView
             android:id="@+id/label_servicio"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:layout_marginTop="45dp"
+            android:textColor="@color/secondaryDarkColor"
             android:text="Tipo de servicio:"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cita_hora_picker" />
