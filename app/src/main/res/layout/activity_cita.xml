@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:gravity="center"
-            android:textColor="@color/secondaryDarkColor"
+            android:textColor="@color/secondaryLightColor"
             android:text="AGENDAR CITA"
             android:textSize="35sp"
             android:textStyle="bold"
