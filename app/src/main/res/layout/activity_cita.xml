@@ -20,12 +20,12 @@
             app:tint="#FFFF" />
 
         <TextView
-            android:id="@+id/titulo_agendar_cita"
+            android:id="@+id/titulo_cita"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:gravity="center"
-            android:textColor="@color/secondaryLightColor"
+            android:textColor="@color/secondaryColor"
             android:text="AGENDAR CITA"
             android:textSize="35sp"
             android:textStyle="bold"
@@ -40,7 +40,7 @@
             android:textColor="@color/secondaryDarkColor"
             android:text="Fecha:"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titulo_agendar_cita" />
+            app:layout_constraintTop_toBottomOf="@+id/titulo_cita" />
 
         <EditText
             android:id="@+id/cita_datepicker"
