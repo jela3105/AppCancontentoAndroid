@@ -24,23 +24,24 @@ public class CitaActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cita);
         fechaCita = (EditText) findViewById(R.id.cita_datepicker);
+        titulo = findViewById(R.id.titulo_cita);
         fechaCita.setOnClickListener(this);
 
         Bundle extras = getIntent().getExtras();
         if(extras != null){
             switch (Objects.requireNonNull(extras.getString("Action"))) {
                 case "Edit":
-
+                    titulo.setText("EDITAR CITA");
                     break;
                 case "SeeMore":
-
+                    titulo.setText("DETALLE CITA");
                     break;
                 case "AgendarCitaServicio":
-
+                    titulo.setText("AGENDAR CITA");
                     break;
 
                 case "AgendarCitaMascota":
-
+                    titulo.setText("AGENDAR CITA");
                     break;
             }
         }

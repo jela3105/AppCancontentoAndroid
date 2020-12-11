@@ -75,7 +75,7 @@
         android:layout_marginTop="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:text="Agregar Cita"
+        android:text="Agregar Mascota"
         android:background="@color/primaryColor"
         android:textColor="@color/secondaryTextColor"
         app:layout_constraintEnd_toEndOf="parent"
