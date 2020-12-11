@@ -56,8 +56,8 @@ public class ServiciosFragment extends Fragment {
 
     private void llenarLista() {
         listaServicios.add(new Servicio("Estetica","https://raw.githubusercontent.com/jela3105/CanContentoFrontend/main/images/index/estetica.jpg","Se realiza un bano con corte de pelo y cepillado"));
-        listaServicios.add(new Servicio("Veterinario","https://raw.githubusercontent.com/jela3105/CanContentoFrontend/main/images/index/estetica.jpg","Se realiza una consulta general para saber el estado de salud de la mascota"));
-        listaServicios.add(new Servicio("Estetica","https://raw.githubusercontent.com/jela3105/CanContentoFrontend/main/images/index/estetica.jpg","Se realiza un bano con corte de pelo y cepillado"));
+        listaServicios.add(new Servicio("Veterinario","https://papelmatic.com/wp-content/uploads/2019/09/papelmatic-higiene-profesional-limpieza-desinfeccion-clinicas-veterinarias-1080x675.jpg","Se realiza una consulta general para saber el estado de salud de la mascota"));
+        listaServicios.add(new Servicio("Corte de garras","https://blog.arion-petfood.es/wp-content/uploads/2015/05/154-Como-cortar-las-u%C3%B1as-a-un-perro-01_06-604x270.jpg","Se realiza un corte de garras, necesario para las mascotas"));
 
     }
 }

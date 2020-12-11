@@ -87,8 +87,8 @@ public class MascotasFragment extends Fragment {
     }
 
     private void fillList() {
-        listaMascotas.add(new Mascota("https://raw.githubusercontent.com/jela3105/CanContentoFrontend/main/images/index/estetica.jpg","El perrito", "Citas finalizadas: 0"));
-        listaMascotas.add(new Mascota("https://raw.githubusercontent.com/jela3105/CanContentoFrontend/main/images/index/estetica.jpg","El segundo", "Citas finalizadas: 0"));
+        listaMascotas.add(new Mascota("https://estaticos.muyinteresante.es/media/cache/1140x_thumb/uploads/images/gallery/59bbb29c5bafe878503c9872/husky-siberiano-bosque.jpg","El perrito", "Citas finalizadas: 0"));
+        listaMascotas.add(new Mascota("https://dam.vanidades.com/wp-content/uploads/2020/04/%C2%A1Como-si-necesit%C3%A1ramos-m%C3%A1s-razones-para-amar-a-los-perritos-Seg%C3%BAn-investigadores-el-mejor-amigo-del-hombre-podr%C3%ADa-ayudar-a-detectar-el-coronavirus..jpg","El segundo", "Citas finalizadas: 0"));
     }
 
 

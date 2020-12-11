@@ -105,13 +105,13 @@ public class CitasFragment extends Fragment implements AdapterView.OnItemSelecte
         DescripcionCita primero = new DescripcionCita();
         DescripcionCita segundo = new DescripcionCita();
 
-        primero.setFoto("https://raw.githubusercontent.com/jela3105/CanContentoFrontend/main/images/index/estetica.jpg");
+        primero.setFoto("https://dam.vanidades.com/wp-content/uploads/2020/04/%C2%A1Como-si-necesit%C3%A1ramos-m%C3%A1s-razones-para-amar-a-los-perritos-Seg%C3%BAn-investigadores-el-mejor-amigo-del-hombre-podr%C3%ADa-ayudar-a-detectar-el-coronavirus..jpg");
         primero.setServicio("Corte de garras");
         primero.setStatus(1);
         primero.setMascota("El perrito");
         primero.setDescripcion("Se realiza un corte de garras muy chido");
 
-        segundo.setFoto("https://raw.githubusercontent.com/jela3105/CanContentoFrontend/main/images/index/estetica.jpg");
+        segundo.setFoto("https://estaticos.muyinteresante.es/media/cache/1140x_thumb/uploads/images/gallery/59bbb29c5bafe878503c9872/husky-siberiano-bosque.jpg");
         segundo.setServicio("Baño especial");
         segundo.setStatus(2);
         segundo.setMascota("El segundo");
