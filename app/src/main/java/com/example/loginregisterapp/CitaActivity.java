@@ -1,6 +1,7 @@
 package com.example.loginregisterapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
@@ -12,9 +13,11 @@ import android.widget.Toast;
 
 import com.example.loginregisterapp.Pickers.DatePickerFragment;
 
+import java.text.DateFormat;
+import java.util.Calendar;
 import java.util.Objects;
 
-public class CitaActivity extends AppCompatActivity implements View.OnClickListener {
+public class CitaActivity extends AppCompatActivity implements View.OnClickListener, DatePickerDialog.OnDateSetListener {
 
     TextView titulo;
     EditText fechaCita;
@@ -52,23 +55,23 @@ public class CitaActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()){
             case (R.id.cita_datepicker):
-                showDatePickerDialog();
+                DialogFragment datePicker = new DatePickerFragment();
+                datePicker.show(getSupportFragmentManager(), "Date picker");
                 break;
         }
     }
 
     //https://programacionymas.com/blog/como-pedir-fecha-android-usando-date-picker
-    private void showDatePickerDialog() {
-        Toast.makeText(this, "entro en mostrar", Toast.LENGTH_SHORT).show();
-        DatePickerFragment newFragment = DatePickerFragment.newInstance(new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                // +1 because January is zero
-                String selectedDate = day + " / " + (month+1) + " / " + year;
-                fechaCita.setText("caca");
-            }
-        });
-        Toast.makeText(this, "salio de mostrar", Toast.LENGTH_SHORT).show();
-        newFragment.show(getSupportFragmentManager(), "datePicker");
+
+
+    @Override
+    public void onDateSet(DatePicker datePicker, int year, int month, int dayOfMonth) {
+       Calendar calendar = Calendar.getInstance();
+       calendar.set(Calendar.YEAR, year);
+        calendar.set(Calendar.MONTH, month);
+        calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+
+        String chosenDay = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
+        fechaCita.setText(chosenDay);
     }
 }
